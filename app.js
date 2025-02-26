@@ -8,16 +8,22 @@ function agregarAmigo() {
     // Obtener el valor ingresado en el input
     const nombreAmigo = document.getElementById('amigo').value;
 
-    // Agregar el nombre al array
-    amigos.push(nombreAmigo);
+    // Validar si el campo está vacío
+    if (nombreAmigo.trim() === "") {
+        // Mostrar un mensaje de error si el campo está vacío
+        alert("Por favor, inserte un nombre.");
+    } else {
+        // Agregar el nombre al array
+        amigos.push(nombreAmigo);
 
-    // Crear un nuevo elemento de lista
-    const li = document.createElement('li');
-    li.textContent = nombreAmigo;
+        // Crear un nuevo elemento de lista
+        const li = document.createElement('li');
+        li.textContent = nombreAmigo;
 
-    // Agregar el nuevo elemento al <ul> con id 'listaAmigos'
-    document.getElementById('listaAmigos').appendChild(li);
+        // Agregar el nuevo elemento al <ul> con id 'listaAmigos'
+        document.getElementById('listaAmigos').appendChild(li);
 
-    // Limpiar el campo de entrada
-    document.getElementById('amigo').value = '';
+        // Limpiar el campo de entrada
+        document.getElementById('amigo').value = '';
+    }
 }
