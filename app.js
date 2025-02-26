@@ -44,3 +44,20 @@ function actualizarListaAmigos() {
         lista.appendChild(li); // Agregar el <li> a la lista HTML
     }
 }
+
+// Función para sortear un amigo secreto aleatoriamente
+function sortearAmigo() {
+    // Verificar si el array 'amigos' no está vacío
+    if (amigos.length === 0) {
+        alert("No hay amigos para sortear.");
+    } else {
+        // Generar un índice aleatorio
+        const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+        // Obtener el amigo sorteado
+        const amigoSorteado = amigos[indiceAleatorio];
+
+        // Mostrar el resultado en el HTML
+        document.getElementById('resultado').innerHTML = `Amigo secreto sorteado: <strong>${amigoSorteado}</strong>`;
+    }
+}
